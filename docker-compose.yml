@@ -1,14 +1,39 @@
-services: 
-  db:
-    image: postgres:latest
-    container_name: titanbay_db
-    environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: titanbay_database
+# services: 
+#   db:
+#     image: postgres:latest
+#     container_name: titanbay_db
+#     environment:
+#       POSTGRES_USER: user
+#       POSTGRES_PASSWORD: password
+#       POSTGRES_DB: titanbay_database
+#     ports:
+#       - "5434:5432"
+#     volumes:
+#       - postgres_data:/var/lib/postgresql/data
+# volumes:
+#   postgres_data:
+
+
+services:
+  api:
+    build: .
     ports:
-      - "5434:5432"
+      - "${PORT}:3000"
+    env_file:
+      - .env
+    depends_on:
+      - db
+    command: sh wait-for-db.sh npm start
+
+  db:
+    image: postgres:15
+    env_file:
+      - .env
+    ports:
+      - "5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data
+      - ./db:/docker-entrypoint-initdb.d
+
 volumes:
-  postgres_data:
+  pgdata:
