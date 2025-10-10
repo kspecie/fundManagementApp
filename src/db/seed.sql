@@ -7,7 +7,7 @@
 -- 1. Sample Funds
 -- =====================
 INSERT INTO funds (id, name, vintage_year, target_size_usd, status) VALUES
-('550e8400-e29b-41d4-a716-446655440000', 'Titanbay Growth Fund I', 2024, 250000000.00, 'Fundraising')
+('550e8400-e29b-41d4-a716-446655440000', 'Titanbay Growth Fund I', 2024, 250000000.64, 'Fundraising')
 ON CONFLICT (name) DO NOTHING;
 
 INSERT INTO funds (id, name, vintage_year, target_size_usd, status) VALUES
@@ -19,7 +19,7 @@ INSERT INTO funds (id, name, vintage_year, target_size_usd, status) VALUES
 ON CONFLICT (name) DO NOTHING;
 
 INSERT INTO funds (id, name, vintage_year, target_size_usd, status) VALUES
-('880e8400-e29b-41d4-a716-446655440011', 'Blackstone Real Estate Partners X', 2024, 1000000000.00, 'Fundraising')
+('880e8400-e29b-41d4-a716-446655440011', 'Blackstone Real Estate Partners X', 2024, 1000000000.50, 'Fundraising')
 ON CONFLICT (name) DO NOTHING;
 
 INSERT INTO funds (id, name, vintage_year, target_size_usd, status) VALUES

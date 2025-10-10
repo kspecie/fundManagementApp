@@ -10,6 +10,12 @@ app.use(express.json());
 
 //Routes
 app.use("/api/funds", fundRoutes);
+console.log("Routes registered at /api/funds");
+
+// app.get("/test", (req, res) => {
+//   res.send("Test route works");
+// });
+
 
 // Ensure the pool is connected before starting the server
 pool
