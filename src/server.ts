@@ -2,6 +2,8 @@ import "dotenv/config";
 import express, { Request, Response, NextFunction } from "express";
 import { pool } from "./db"; // Import the pool from db/index.ts
 import fundRoutes from "./routes/fundRoutes";
+import investorRoutes from "./routes/investorRoutes";
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -10,7 +12,8 @@ app.use(express.json());
 
 //Routes
 app.use("/api/funds", fundRoutes);
-console.log("Routes registered at /api/funds");
+app.use("/api/investors", investorRoutes);
+
 
 // app.get("/test", (req, res) => {
 //   res.send("Test route works");

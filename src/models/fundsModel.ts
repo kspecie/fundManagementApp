@@ -9,6 +9,13 @@ export interface Fund {
   status: string;
   created_at: string;
 }
+export interface Investment {
+  id: string;
+  fund_id: string;
+  investor_id: string;
+  amount_usd: number;
+  investment_date: string;
+}
 
 export const getAllFundsModel = async (): Promise<Fund[]> => {
   const query = `
@@ -73,4 +80,39 @@ export const updateExistingFundModel = async (
   ]);
   console.log("updatedFund:", updatedFund);
   return updatedFund[0];
+};
+
+export const getAllInvestmentsForFundModel = async (
+  fund_id: string
+): Promise<Investment[]> => {
+  const query = `
+  SELECT id, fund_id, investor_id, amount_usd, investment_date::text
+  FROM investments
+  WHERE fund_id = $1
+  ORDER BY investment_date DESC
+  `;
+  const { rows: allInvestments } = await pool.query<Investment>(query, [
+    fund_id,
+  ]);
+  console.log("allInvestments:", allInvestments);
+  return allInvestments;
+};
+
+export const createNewInvestmentForFundModel = async (
+  fund_id: string,
+  investment: Investment
+): Promise<Investment> => {
+  const query = `
+  INSERT INTO investments (fund_id, investor_id, amount_usd, investment_date) 
+  VALUES ($1, $2, $3, $4) 
+  RETURNING id, investor_id, fund_id,  amount_usd, investment_date::text
+  `;
+  const { rows: newInvestment } = await pool.query<Investment>(query, [
+    fund_id,
+    investment.investor_id,
+    investment.amount_usd,
+    investment.investment_date,
+  ]);
+  console.log("newInvestment:", newInvestment);
+  return newInvestment[0];
 };
