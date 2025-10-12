@@ -415,6 +415,9 @@ docker-compose down -v && docker-compose build && docker-compose up -d
 - Hot reload is enabled in development mode
 - All database operations use parameterized queries to prevent SQL injection
 - TypeScript compilation happens automatically in development
+- Two additional branches available:
+  1. features/error-handling
+  2. testing
 
 ---
 
