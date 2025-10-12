@@ -15,7 +15,7 @@ A RESTful API for managing private equity funds, investors, and investments buil
 1. **Clone the repository**
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/kspecie/titanBayTask.git
    cd titanBayTask
    ```
 
@@ -45,7 +45,7 @@ A RESTful API for managing private equity funds, investors, and investments buil
 1. **Clone the repository**
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/kspecie/titanBayTask.git
    cd titanBayTask
    ```
 
