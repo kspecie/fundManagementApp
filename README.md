@@ -1,4 +1,4 @@
-# Titanbay Private Equity Fund Management API
+# Titanbay Task
 
 A RESTful API for managing private equity funds, investors, and investments built with Node.js, TypeScript, Express, and PostgreSQL.
 
@@ -77,8 +77,8 @@ A RESTful API for managing private equity funds, investors, and investments buil
 | `npm run docker:up`           | Start application with Docker Compose    |
 | `npm run docker:build`        | Build Docker images                      |
 | `npm run docker:restart`      | Restart with fresh database              |
-| `npm run docker:soft-restart` | Restart without clearing data            |
-| `npm run docker:logs`         | View application logs                    |
+| `npm run docker:soft-restart` | Restart without clearing databas    |
+| `npm run docker:logs`         | View applicationlogs                |
 
 ## 🌐 API Endpoints
 
@@ -255,23 +255,6 @@ Content-Type: application/json
 - `investment_date` (DATE, <= current date)
 - `created_at` (TIMESTAMP)
 
-## 🔧 Environment Variables
-
-Create a `.env` file with the following variables:
-
-```env
-# Database Configuration
-DB_HOST=db
-DB_PORT=5432
-DB_DATABASE=titanbay_db
-DB_USER=postgres
-DB_PASSWORD=password
-
-# Application Configuration
-PORT=3000
-NODE_ENV=development
-```
-
 ## 📊 Sample Data
 
 The application comes pre-loaded with sample data:
@@ -314,7 +297,6 @@ src/
 ├── models/         # Database operations
 ├── routes/         # API route definitions
 ├── db/            # Database configuration and SQL files
-├── types/         # TypeScript type definitions
 └── server.ts      # Application entry point
 ```
 
@@ -434,20 +416,8 @@ docker-compose down -v && docker-compose build && docker-compose up -d
 - All database operations use parameterized queries to prevent SQL injection
 - TypeScript compilation happens automatically in development
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test your changes
-5. Submit a pull request
-
-## 📄 License
-
-ISC License - see package.json for details
-
 ---
 
 **Author**: Kayla Specie  
 **Version**: 1.0.0  
-**Last Updated**: 2024
+**Last Updated**: 2025
