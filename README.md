@@ -42,18 +42,31 @@ A RESTful API for managing private equity funds, investors, and investments buil
 
 ### Option 2: Local Development
 
-1. **Install dependencies**
+1. **Clone the repository**
+
+   ```bash
+   git clone <repository-url>
+   cd titanBayTask
+   ```
+
+2. **Create environment file**
+
+   ```bash
+   cp .env.example .env
+   ```
+
+3. **Install dependencies**
 
    ```bash
    npm install
    ```
 
-2. **Set up PostgreSQL database**
+4. **Set up PostgreSQL database**
 
    - Create a database named `titanbay_db`
-   - Update `.env` with your database credentials
+   - Update `.env` with your database credentials (update the password)
 
-3. **Run database setup**
+5. **Run database setup**
 
    ```bash
    # Schema creation and seeding happens automatically via Docker
@@ -62,7 +75,7 @@ A RESTful API for managing private equity funds, investors, and investments buil
    psql -d titanbay_db -f src/db/seed.sql
    ```
 
-4. **Start the development server**
+6. **Start the development server**
    ```bash
    npm run dev
    ```
