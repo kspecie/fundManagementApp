@@ -19,7 +19,7 @@ A RESTful API for managing private equity funds, investors, and investments buil
    cd titanBayTask
    ```
 
-2. **Create environment file**
+2. **Create environment file and update password**
 
    ```bash
    cp .env.example .env
@@ -63,13 +63,12 @@ A RESTful API for managing private equity funds, investors, and investments buil
 
 4. **Set up PostgreSQL database**
 
-   - Create a database named `titanbay_db`
-   - Update `.env` with your database credentials (update the password)
+   - Create a database named `titanbay_database`
+   - Update `.env` with your database credentials (update the password) and update DB_HOST to 'localhost'. 
 
 5. **Run database setup**
 
    ```bash
-   # Schema creation and seeding happens automatically via Docker
    # For local setup, run the SQL files manually:
    psql -d titanbay_db -f src/db/schema.sql
    psql -d titanbay_db -f src/db/seed.sql
@@ -402,24 +401,6 @@ curl http://localhost:3000/api/funds/550e8400-e29b-41d4-a716-446655440000/invest
 
 Import the API endpoints using the base URL: `http://localhost:3000/api`
 
-## 🐳 Docker Commands
-
-```bash
-# Start all services
-docker-compose up -d
-
-# View logs
-docker-compose logs -f
-
-# Restart services
-docker-compose restart
-
-# Stop services
-docker-compose down
-
-# Rebuild and restart
-docker-compose down -v && docker-compose build && docker-compose up -d
-```
 
 ## 📝 Development Notes
 
