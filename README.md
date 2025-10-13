@@ -64,7 +64,7 @@ A RESTful API for managing private equity funds, investors, and investments buil
 4. **Set up PostgreSQL database**
 
    - Create a database named `titanbay_database`
-   - Update `.env` with your database credentials (update the password) and update DB_HOST to 'localhost'. 
+   - Update `.env` with your database credentials (update the password) and update DB_HOST to 'localhost'. Make sure to update the DATABASE_URL too. 
 
 5. **Run database setup**
 
