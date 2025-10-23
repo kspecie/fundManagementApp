@@ -1,5 +1,3 @@
-# Titanbay Task
-
 A RESTful API for managing private equity funds, investors, and investments built with Node.js, TypeScript, Express, and PostgreSQL.
 
 ## 🚀 Quick Start (Minimal Setup)
